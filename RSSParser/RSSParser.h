@@ -11,8 +11,8 @@
 
 @interface RSSParser : NSObject <NSXMLParserDelegate>
 
-@property NSMutableArray *rssEntries;
-@property (copy) NSString *url;
+@property (nonatomic, strong) NSMutableArray *rssEntries;
+@property (nonatomic, copy) NSString *url;
 
 - (instancetype) initWithURL:(NSString *)URL;
 - (void) populateRSSEntries;

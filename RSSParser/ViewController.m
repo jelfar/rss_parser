@@ -18,18 +18,20 @@ static NSString * const kPCBlogURL = @"https://www.personalcapital.com/blog/feed
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
+    //Create the view controller 
+    self.rssCollectionViewController = [[RSSCollectionViewController alloc] init];
+    
+    //Create RSS Parser and begin populating entries
     self.rssParser = [[RSSParser alloc] initWithURL:kPCBlogURL];
     [self.rssParser populateRSSEntries];
     
-    self.rssCollectionViewController = [[RSSCollectionViewController alloc] init];
+    //Give the collection view controller access to rssParser
     self.rssCollectionViewController.rssParser = self.rssParser;
+    
+    //Set the frame of the view and push on the collection view controller
     [self.view setFrame:[[UIScreen mainScreen] bounds]];
     [self.navigationController pushViewController:self.rssCollectionViewController animated:NO];
-    //[self addChildViewController:self.rssCollectionViewController];
-    //[self.view addSubview:self.rssCollectionViewController.view];
-    //[self.rssCollectionViewController didMoveToParentViewController:self];
 }
 
 - (void)didReceiveMemoryWarning {

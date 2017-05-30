@@ -19,6 +19,7 @@
 		058DE4651EDBBACB002EAEB4 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 058DE4641EDBBACB002EAEB4 /* RSSParser.m */; };
 		05E69EFD1EDCCED000D81F9A /* RSSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E69EFC1EDCCED000D81F9A /* RSSCollectionViewCell.m */; };
 		05E69F001EDCD55600D81F9A /* RSSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E69EFF1EDCD55600D81F9A /* RSSCollectionViewController.m */; };
+		05EFA72C1EDDF8B0003BC0F4 /* RSSDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05EFA72B1EDDF8B0003BC0F4 /* RSSDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		05E69EFC1EDCCED000D81F9A /* RSSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSCollectionViewCell.m; sourceTree = "<group>"; };
 		05E69EFE1EDCD55600D81F9A /* RSSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSCollectionViewController.h; sourceTree = "<group>"; };
 		05E69EFF1EDCD55600D81F9A /* RSSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSCollectionViewController.m; sourceTree = "<group>"; };
+		05EFA72A1EDDF8B0003BC0F4 /* RSSDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSDetailViewController.h; sourceTree = "<group>"; };
+		05EFA72B1EDDF8B0003BC0F4 /* RSSDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				058DE4611EDBB5D1002EAEB4 /* RSSEntry.m */,
 				05E69EFE1EDCD55600D81F9A /* RSSCollectionViewController.h */,
 				05E69EFF1EDCD55600D81F9A /* RSSCollectionViewController.m */,
+				05EFA72A1EDDF8B0003BC0F4 /* RSSDetailViewController.h */,
+				05EFA72B1EDDF8B0003BC0F4 /* RSSDetailViewController.m */,
 				05E69EFB1EDCCED000D81F9A /* RSSCollectionViewCell.h */,
 				05E69EFC1EDCCED000D81F9A /* RSSCollectionViewCell.m */,
 				058DE4361EDBA84D002EAEB4 /* Main.storyboard */,
@@ -302,6 +307,7 @@
 				05E69F001EDCD55600D81F9A /* RSSCollectionViewController.m in Sources */,
 				058DE4651EDBBACB002EAEB4 /* RSSParser.m in Sources */,
 				058DE42F1EDBA84D002EAEB4 /* main.m in Sources */,
+				05EFA72C1EDDF8B0003BC0F4 /* RSSDetailViewController.m in Sources */,
 				058DE4621EDBB5D1002EAEB4 /* RSSEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

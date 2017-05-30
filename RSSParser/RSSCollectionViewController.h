@@ -8,13 +8,14 @@
 
 #import "RSSCollectionViewCell.h"
 #import "RSSParser.h"
+#import "RSSDetailViewController.h"
 #import <UIKit/UIKit.h>
 
 @interface RSSCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic) UICollectionView *collectionView;
-@property (nonatomic, strong) NSMutableArray *rssEntries;
-@property (nonatomic, strong) RSSParser *rssParser;
+@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSMutableDictionary *imageCache;
+@property (nonatomic, strong) NSMutableArray *rssEntries;
+@property (nonatomic, weak) RSSParser *rssParser;
 
 @end

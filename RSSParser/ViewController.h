@@ -13,7 +13,7 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic) RSSCollectionViewController *rssCollectionViewController;
+@property (nonatomic, strong) RSSCollectionViewController *rssCollectionViewController;
 @property (nonatomic, strong) RSSParser *rssParser;
 
 @end

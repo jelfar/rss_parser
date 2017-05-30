@@ -21,6 +21,8 @@
 
 @implementation RSSParser
 
+#pragma mark - Init
+
 /*
  * Default init creates empty URL.
  */
@@ -55,6 +57,7 @@
     self.xmlItemDict = [NSMutableDictionary dictionary];
 }
 
+# pragma mark - Parsing
 /*
  * Kicks off actual RSS parsing.
  */
@@ -69,14 +72,17 @@
         [parser parse];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            //NSLog(@"we have parsed the data: %@", self.xmlDataArray);
-            [self printRSSEntries];
+            //[self printRSSEntries];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"RSSUpdateCollection" object:self];
         });
     });
     
 }
 
+
+/*
+ * Utility to print out rss entries
+ */
 - (void) printRSSEntries {
     NSLog(@"RSS Entries: \n");
     for(RSSEntry *entry in self.rssEntries) {

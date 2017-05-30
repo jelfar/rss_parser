@@ -12,11 +12,11 @@
 
 @interface RSSEntry : NSObject
 
-@property (copy) NSString *title;
-@property NSString *imageURL;
-@property NSString *desc;
-@property NSString *date;
-@property NSString *articleURL;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *imageURL;
+@property (nonatomic, copy) NSString *desc;
+@property (nonatomic, copy) NSString *date;
+@property (nonatomic, copy) NSString *articleURL;
 
 - (instancetype) initWithTitle:(NSString *)title
                    withPubDate:(NSString *)pDate
