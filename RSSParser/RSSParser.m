@@ -71,6 +71,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //NSLog(@"we have parsed the data: %@", self.xmlDataArray);
             [self printRSSEntries];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RSSUpdateCollection" object:self];
         });
     });
     

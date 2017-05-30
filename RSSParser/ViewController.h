@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RSSCollectionViewController.h"
+#import "RSSParser.h"
+
 
 @interface ViewController : UIViewController
 
+@property (nonatomic) RSSCollectionViewController *rssCollectionViewController;
+@property (nonatomic, strong) RSSParser *rssParser;
 
 @end
 

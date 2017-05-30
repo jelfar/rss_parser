@@ -17,6 +17,8 @@
 		058DE4531EDBA84D002EAEB4 /* RSSParserUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 058DE4521EDBA84D002EAEB4 /* RSSParserUITests.m */; };
 		058DE4621EDBB5D1002EAEB4 /* RSSEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 058DE4611EDBB5D1002EAEB4 /* RSSEntry.m */; };
 		058DE4651EDBBACB002EAEB4 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 058DE4641EDBBACB002EAEB4 /* RSSParser.m */; };
+		05E69EFD1EDCCED000D81F9A /* RSSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E69EFC1EDCCED000D81F9A /* RSSCollectionViewCell.m */; };
+		05E69F001EDCD55600D81F9A /* RSSCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E69EFF1EDCD55600D81F9A /* RSSCollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		058DE4611EDBB5D1002EAEB4 /* RSSEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSEntry.m; sourceTree = "<group>"; };
 		058DE4631EDBBACB002EAEB4 /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
 		058DE4641EDBBACB002EAEB4 /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
+		05E69EFB1EDCCED000D81F9A /* RSSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSCollectionViewCell.h; sourceTree = "<group>"; };
+		05E69EFC1EDCCED000D81F9A /* RSSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSCollectionViewCell.m; sourceTree = "<group>"; };
+		05E69EFE1EDCD55600D81F9A /* RSSCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSCollectionViewController.h; sourceTree = "<group>"; };
+		05E69EFF1EDCD55600D81F9A /* RSSCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSCollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 				058DE4641EDBBACB002EAEB4 /* RSSParser.m */,
 				058DE4601EDBB5D1002EAEB4 /* RSSEntry.h */,
 				058DE4611EDBB5D1002EAEB4 /* RSSEntry.m */,
+				05E69EFE1EDCD55600D81F9A /* RSSCollectionViewController.h */,
+				05E69EFF1EDCD55600D81F9A /* RSSCollectionViewController.m */,
+				05E69EFB1EDCCED000D81F9A /* RSSCollectionViewCell.h */,
+				05E69EFC1EDCCED000D81F9A /* RSSCollectionViewCell.m */,
 				058DE4361EDBA84D002EAEB4 /* Main.storyboard */,
 				058DE4391EDBA84D002EAEB4 /* Assets.xcassets */,
 				058DE43B1EDBA84D002EAEB4 /* LaunchScreen.storyboard */,
@@ -287,7 +297,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				058DE4351EDBA84D002EAEB4 /* ViewController.m in Sources */,
+				05E69EFD1EDCCED000D81F9A /* RSSCollectionViewCell.m in Sources */,
 				058DE4321EDBA84D002EAEB4 /* AppDelegate.m in Sources */,
+				05E69F001EDCD55600D81F9A /* RSSCollectionViewController.m in Sources */,
 				058DE4651EDBBACB002EAEB4 /* RSSParser.m in Sources */,
 				058DE42F1EDBA84D002EAEB4 /* main.m in Sources */,
 				058DE4621EDBB5D1002EAEB4 /* RSSEntry.m in Sources */,
@@ -528,6 +540,7 @@
 				058DE4591EDBA84D002EAEB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		058DE45A1EDBA84D002EAEB4 /* Build configuration list for PBXNativeTarget "RSSParserTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +549,7 @@
 				058DE45C1EDBA84D002EAEB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		058DE45D1EDBA84D002EAEB4 /* Build configuration list for PBXNativeTarget "RSSParserUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +558,7 @@
 				058DE45F1EDBA84D002EAEB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
