@@ -9,6 +9,7 @@
 #import "RSSCollectionViewCell.h"
 #import "RSSParser.h"
 #import "RSSDetailViewController.h"
+#import "RSSConstants.h"
 #import <UIKit/UIKit.h>
 
 @interface RSSCollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>

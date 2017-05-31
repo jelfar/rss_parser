@@ -7,6 +7,7 @@
 //
 
 #import "RSSEntry.h"
+#import "RSSConstants.h"
 #import <Foundation/Foundation.h>
 
 @interface RSSParser : NSObject <NSXMLParserDelegate>

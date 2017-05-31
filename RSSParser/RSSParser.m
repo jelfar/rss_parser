@@ -13,7 +13,6 @@
 
 @interface RSSParser ()
 
-@property (nonatomic) NSMutableArray *xmlDataArray;
 @property (nonatomic) NSMutableString *xmlString;
 @property (nonatomic) NSMutableDictionary *xmlItemDict;
 
@@ -52,14 +51,13 @@
 - (void)initPropertiesWithURL:(NSString *)url {
     self.rssEntries = [NSMutableArray array];
     self.url = url;
-    self.xmlDataArray = [NSMutableArray array];
     self.xmlString = [NSMutableString string];
     self.xmlItemDict = [NSMutableDictionary dictionary];
 }
 
 # pragma mark - Parsing
 /*
- * Kicks off actual RSS parsing.
+ * Kicks off actual RSS parsing asynchronously using GCD
  */
 - (void) populateRSSEntries {
     if(![self.url length]) {
@@ -72,13 +70,12 @@
         [parser parse];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            //[self printRSSEntries];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"RSSUpdateCollection" object:self];
+            //Send notification to let RSSCollectionViewController know the data is ready
+            [[NSNotificationCenter defaultCenter] postNotificationName:kRSSupdateCollectionNotification object:self];
         });
     });
     
 }
-
 
 /*
  * Utility to print out rss entries
@@ -103,7 +100,7 @@
  * the dictionary built for that node. Then, clear the dictionary and repeat.
  *
  * The string xmlString is used to obtain the data in between each start/end tag. It is cleared
- * after being added to an item's dictionary in order to cycle through each item's attributes.
+ * after an end tag is found in order to cycle through each item's attributes.
  */
 - (void)parser:(NSXMLParser *)parser didStartElement:(nonnull NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName attributes:(nonnull NSDictionary<NSString *,NSString *> *)attributeDict {
     if([elementName isEqualToString:@"item"]) {
@@ -123,7 +120,6 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(nonnull NSString *)elementName namespaceURI:(nullable NSString *)namespaceURI qualifiedName:(nullable NSString *)qName {
     if([elementName isEqualToString:@"item"]) {
-        //[self.xmlDataArray addObject:[self.xmlItemDict copy]];
         [self.rssEntries addObject:[[RSSEntry alloc] initWithTitle:[self.xmlItemDict objectForKey:@"title"]
                                                        withPubDate:[self.xmlItemDict objectForKey:@"pubDate"]
                                                    withDescription:[self.xmlItemDict objectForKey:@"description"]

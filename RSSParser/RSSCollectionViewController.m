@@ -17,17 +17,16 @@
 
 @implementation RSSCollectionViewController
 
+//Local constants
 static NSString * const kRSSreuseIdentifier = @"Cell";
 static NSString * const kRSSheaderReuseIdentifier = @"HeaderView";
-static NSString * const kRSSupdateCollectionNotification = @"RSSUpdateCollection";
 static NSInteger const kRSScollectionViewItemHeight = 300;
 
 #pragma mark - UIViewcontroller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+
     self.view = [[UIView alloc] initWithFrame:CGRectMake(10, 0, [[UIScreen mainScreen] bounds].size.width - 20, [[UIScreen mainScreen] bounds].size.height)];
     
     //Create layout for collection view
@@ -48,7 +47,6 @@ static NSInteger const kRSScollectionViewItemHeight = 300;
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
     self.collectionView.alwaysBounceVertical = YES;
     [self.view addSubview:self.collectionView];
-    self.navigationItem.hidesBackButton = YES;
     
     //Setup loading indicator for main feed
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -56,6 +54,9 @@ static NSInteger const kRSScollectionViewItemHeight = 300;
     self.activityIndicator.hidesWhenStopped = YES;
     [self.activityIndicator startAnimating];
     [self.view addSubview:self.activityIndicator];
+    
+    //Hide back button as this is now the main view
+    self.navigationItem.hidesBackButton = YES;
     
     //Add refresh button to nav bar
     UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshCollection)];
@@ -99,6 +100,8 @@ static NSInteger const kRSScollectionViewItemHeight = 300;
         for(NSURLSessionDataTask *downloadTask in downloadTasks) {
             [downloadTask cancel];
         }
+        
+        //Request for data
         [self.rssParser.rssEntries removeAllObjects];
         [self.rssParser populateRSSEntries];
     }];
@@ -249,10 +252,11 @@ static NSInteger const kRSScollectionViewItemHeight = 300;
                 UIImage *image = [UIImage imageWithData:data];
                 if(image) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        //Make sure cell is still on screen by calling cellForItemAtIndexPath
                         if([self indexPathIsValid:indexPath] && !self.isRefreshingData) {
                             [self.imageCache setObject:image forKey:imageKey];
                             RSSCollectionViewCell *updatedCell = (RSSCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+                            
+                            //Make sure cell is still on screen by calling cellForItemAtIndexPath
                             if(updatedCell) {
                                 updatedCell.imageView.image = image;
                                 [updatedCell.activityIndicator stopAnimating];
@@ -269,6 +273,9 @@ static NSInteger const kRSScollectionViewItemHeight = 300;
     }
 }
 
+/*
+ * Helper function to make sure indexPath is still valid in asynchronous image loading
+ */
 - (BOOL)indexPathIsValid:(NSIndexPath *)indexPath {
     if(indexPath.section >= self.collectionView.numberOfSections) {
         return false;

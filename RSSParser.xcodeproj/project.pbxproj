@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0536B4001EDE3A4C004C236B /* RSSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0536B3FF1EDE3A4C004C236B /* RSSConstants.m */; };
 		058DE42F1EDBA84D002EAEB4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 058DE42E1EDBA84D002EAEB4 /* main.m */; };
 		058DE4321EDBA84D002EAEB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 058DE4311EDBA84D002EAEB4 /* AppDelegate.m */; };
 		058DE4351EDBA84D002EAEB4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058DE4341EDBA84D002EAEB4 /* ViewController.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0536B3FE1EDE3A4C004C236B /* RSSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSConstants.h; sourceTree = "<group>"; };
+		0536B3FF1EDE3A4C004C236B /* RSSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSConstants.m; sourceTree = "<group>"; };
 		058DE42A1EDBA84D002EAEB4 /* RSSParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		058DE42E1EDBA84D002EAEB4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		058DE4301EDBA84D002EAEB4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,6 +96,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0536B4011EDE3D5E004C236B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				058DE4331EDBA84D002EAEB4 /* ViewController.h */,
+				058DE4341EDBA84D002EAEB4 /* ViewController.m */,
+				05E69EFE1EDCD55600D81F9A /* RSSCollectionViewController.h */,
+				05E69EFF1EDCD55600D81F9A /* RSSCollectionViewController.m */,
+				05EFA72A1EDDF8B0003BC0F4 /* RSSDetailViewController.h */,
+				05EFA72B1EDDF8B0003BC0F4 /* RSSDetailViewController.m */,
+				058DE4631EDBBACB002EAEB4 /* RSSParser.h */,
+				058DE4641EDBBACB002EAEB4 /* RSSParser.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		0536B4021EDE3DB8004C236B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05E69EFB1EDCCED000D81F9A /* RSSCollectionViewCell.h */,
+				05E69EFC1EDCCED000D81F9A /* RSSCollectionViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0536B4031EDE3DDE004C236B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				058DE4601EDBB5D1002EAEB4 /* RSSEntry.h */,
+				058DE4611EDBB5D1002EAEB4 /* RSSEntry.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		058DE4211EDBA84D002EAEB4 = {
 			isa = PBXGroup;
 			children = (
@@ -118,18 +154,9 @@
 			children = (
 				058DE4301EDBA84D002EAEB4 /* AppDelegate.h */,
 				058DE4311EDBA84D002EAEB4 /* AppDelegate.m */,
-				058DE4331EDBA84D002EAEB4 /* ViewController.h */,
-				058DE4341EDBA84D002EAEB4 /* ViewController.m */,
-				058DE4631EDBBACB002EAEB4 /* RSSParser.h */,
-				058DE4641EDBBACB002EAEB4 /* RSSParser.m */,
-				058DE4601EDBB5D1002EAEB4 /* RSSEntry.h */,
-				058DE4611EDBB5D1002EAEB4 /* RSSEntry.m */,
-				05E69EFE1EDCD55600D81F9A /* RSSCollectionViewController.h */,
-				05E69EFF1EDCD55600D81F9A /* RSSCollectionViewController.m */,
-				05EFA72A1EDDF8B0003BC0F4 /* RSSDetailViewController.h */,
-				05EFA72B1EDDF8B0003BC0F4 /* RSSDetailViewController.m */,
-				05E69EFB1EDCCED000D81F9A /* RSSCollectionViewCell.h */,
-				05E69EFC1EDCCED000D81F9A /* RSSCollectionViewCell.m */,
+				0536B4031EDE3DDE004C236B /* Model */,
+				0536B4021EDE3DB8004C236B /* Views */,
+				0536B4011EDE3D5E004C236B /* Controllers */,
 				058DE4361EDBA84D002EAEB4 /* Main.storyboard */,
 				058DE4391EDBA84D002EAEB4 /* Assets.xcassets */,
 				058DE43B1EDBA84D002EAEB4 /* LaunchScreen.storyboard */,
@@ -142,6 +169,8 @@
 		058DE42D1EDBA84D002EAEB4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0536B3FE1EDE3A4C004C236B /* RSSConstants.h */,
+				0536B3FF1EDE3A4C004C236B /* RSSConstants.m */,
 				058DE42E1EDBA84D002EAEB4 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -302,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				058DE4351EDBA84D002EAEB4 /* ViewController.m in Sources */,
+				0536B4001EDE3A4C004C236B /* RSSConstants.m in Sources */,
 				05E69EFD1EDCCED000D81F9A /* RSSCollectionViewCell.m in Sources */,
 				058DE4321EDBA84D002EAEB4 /* AppDelegate.m in Sources */,
 				05E69F001EDCD55600D81F9A /* RSSCollectionViewController.m in Sources */,
